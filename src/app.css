@@ -26,3 +26,23 @@
 .markdown a {
   @apply hover:underline;
 }
+
+.markdown details {
+  @apply bg-mantle p-2 rounded-md border border-primary my-2;
+}
+
+.markdown summary {
+  @apply font-thin italic;
+}
+
+.markdown h1 {
+  @apply text-2xl;
+}
+
+.markdown h2 {
+  @apply text-xl;
+}
+
+.markdown h3 {
+  @apply text-lg font-bold;
+}
