@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Build your own</title>
+  <title>Build your own X</title>
 </svelte:head>
 
 <div class="h-screen py-2">

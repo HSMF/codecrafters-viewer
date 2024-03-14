@@ -1,42 +1,27 @@
 <script lang="ts">
   import Markdown from '$lib/Markdown.svelte';
-  import Stage from '$lib/Stage.svelte';
   import type { PageData } from './$types';
-  import { language } from './stores';
 
   export let data: PageData;
-  const course = data.course;
 </script>
 
 <div class="flex justify-center">
-  <div class="max-w-xl">
-    <h1 class="text-2xl">{course.name}</h1>
+  <div class="max-w-xl py-5">
+    <h1 class="text-3xl mb-2">My Courses</h1>
+    <ul>
+      {#each data.courses as course}
+        <li class="even:bg-surface0 odd:bg-surface1 rounded-md">
+          <a href={`/${course.slug}`} class="hover:underline"
+            ><div class="px-4 py-3">
+              <h2 class="text-xl">
+                {course.shortName}
+              </h2>
 
-    <Markdown markdown={course.description_md} />
-
-    <section class="rounded-md shadow-md p-2">
-      <h2>available for</h2>
-      <ul>
-        {#each course.languages as lang}
-          <li
-            class="rounded-md py-1 px-2 hover:bg-red/50"
-            class:bg-primary={lang.slug === $language}
+              <Markdown markdown={course.description} />
+            </div></a
           >
-            <button
-              class="w-full"
-              on:click={() => {
-                language.set(lang.slug);
-              }}
-            >
-              {lang.slug}
-            </button>
-          </li>
-        {/each}
-      </ul>
-    </section>
-
-    {#each course.stages as { name, slug, difficulty, description_md: description }}
-      <Stage {name} {slug} {difficulty} {description} />
-    {/each}
+        </li>
+      {/each}
+    </ul>
   </div>
 </div>
