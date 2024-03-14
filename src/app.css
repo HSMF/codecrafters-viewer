@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.markdown p {
+  @apply font-sans;
+}
+
+.markdown pre {
+  @apply bg-crust text-text rounded-md shadow-md px-2 py-2 my-2 shadow-surface0;
+  white-space: pre-wrap;
+}
+
+.markdown ul {
+  @apply list-disc px-4;
+}
+
+.markdown code {
+  @apply bg-surface1;
+}
+
+.markdown pre code {
+  background-color: unset;
+}
+
+.markdown a {
+  @apply hover:underline;
+}
