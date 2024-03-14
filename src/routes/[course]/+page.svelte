@@ -8,6 +8,10 @@
   const course = data.course;
 </script>
 
+<svelte:head>
+  <title>Build your own {course.short_name}</title>
+</svelte:head>
+
 <div class="flex justify-center">
   <div class="max-w-xl py-5">
     <h1 class="text-4xl pb-2">{course.name}</h1>
