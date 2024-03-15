@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Difficulty from './Difficulty.svelte';
   import Markdown from './Markdown.svelte';
 
   export let slug: string;
@@ -6,32 +7,13 @@
   export let difficulty: string;
   export let description: string;
   export let collapsed: boolean = false;
-
-  $: difficultyEmoji = ((d) => {
-    switch (d) {
-      case 'very_easy':
-        return '🐤';
-
-      case 'easy':
-        return '🐔';
-
-      case 'medium':
-        return '👷';
-
-      case 'hard':
-        return '🚨';
-
-      default:
-        return '?';
-    }
-  })(difficulty);
 </script>
 
 <section id={slug}>
   <h2 class="text-xl text-primary rounded-md py-4">
-    <a class="hover:underline" href={`#${slug}`}
-      >{name} <span title={`Difficulty ${difficulty}`}>{difficultyEmoji}</span></a
-    >
+    <a class="hover:underline flex justify-between items-center" href={`#${slug}`}
+      >{name} <Difficulty {difficulty} />
+    </a>
   </h2>
 
   {#if !collapsed}
