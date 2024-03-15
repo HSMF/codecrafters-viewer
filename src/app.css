@@ -24,7 +24,7 @@
 }
 
 .markdown a {
-  @apply hover:underline;
+  @apply hover:underline text-peach;
 }
 
 .markdown details {
@@ -36,13 +36,13 @@
 }
 
 .markdown h1 {
-  @apply text-2xl;
+  @apply mt-4 text-2xl;
 }
 
 .markdown h2 {
-  @apply text-xl;
+  @apply mt-4 text-xl;
 }
 
 .markdown h3 {
-  @apply text-lg font-bold;
+  @apply mt-4 text-lg font-bold;
 }
